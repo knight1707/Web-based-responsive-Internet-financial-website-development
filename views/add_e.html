@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="knight">
+    <title>项目添加</title>
+    <link href="/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style>
+        body{
+            padding-top: 50px;
+        }
+        nav div div span a{
+            color: white;
+            font-size: 16px;
+        }
+        .form-horizontal{
+            margin-top: 15px;
+        }
+        form-horizontal .control-label{
+            text-align: left;
+        }
+    </style>
+	<script type="text/javascript">
+        function addPro(){
+            var name = $('#a_name').val(), period = $('#a_period').val();
+            var profit = $('#a_profit').val(), gvm = $('#a_gvm').val();
+            var cate = $('#a_cate').val();
+            var data = { "name": name, period:period,"profit": profit,gvm: gvm,"cate": cate};
+            $.ajax({
+                url:'/add_e',
+                type:'POST',
+                data:data,
+                success:function(data,status){
+                    if(status == 'success'){
+                        alert('添加成功！')
+                        location.href='detail_e';
+                    }
+                },
+                error:function(data,err){
+                    alert('添加失败！')
+                }
+            });
+        }
+        function goback(){
+                history.go(-1);
+        }
+        function loginout(){
+            if(confirm("请确认是否退出系统?")){
+                self.location="../backstagelogin";
+            }else{
+                self.location="#";
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container dropdown">
+                <a href="#" class="navbar-brand">产品信息添加</a>
+                <div class="navbar-text pull-right text-right">
+                    <span>
+                        <span class="glyphicon glyphicon-leaf"></span>
+                        <a href="../index">返回首页</a>
+                    </span>&#x3000;
+                    <span>
+                        <span class="glyphicon glyphicon-piggy-bank"></span>
+                        <a href="../invest">投资频道</a>
+                    </span>&#x3000;
+                    <span>
+                        <span class="glyphicon glyphicon-arrow-left"></span>
+                        <a onclick="goback()" href="#">返回上一级</a>
+                    </span>&#x3000;
+                    <span>
+                        <span class="glyphicon glyphicon-log-out" ></span>
+                        <a href="#" onclick="loginout()">退出登录</a>
+                    </span>
+                </div>
+            </div>
+        </nav>
+        <div class="header navbar navbar-default">
+            <ul class="nav navbar-nav">
+                <li><a href="add_n">添加公告信息</a></li>
+                <li class="active"><a href="add_e">添加项目信息</a></li>
+            </ul>
+        </div>
+        <div class="container">
+        <div style="margin:10px auto;width: 500px;" class="add_c">
+            <h1>添加商品</h1>
+            <!--<a class="btn  btn-xs btn-success" href="invest" style="margin-left: 400px;">查看前台项目</a>-->
+            <form action="#" role="form" class="form-horizontal" method="POST">
+                <div class="form-group">
+                    <label for="a_name" class="col-sm-4 control-label">项目名称：</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="a_name" id="a_name" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="a_period" class="col-sm-4 control-label">项目期限：</label>
+                    <div class="col-sm-3">
+                        <select name="a_period" id="a_period" class="form-control">
+                            <option value="1个月">1个月</option>
+                            <option value="3个月">3个月</option>
+                            <option value="4个月">4个月</option>
+                            <option value="6个月">6个月</option>
+                            <option value="7个月">7个月</option>
+                            <option value="8个月">8个月</option>
+                            <option value="10个月">10个月</option>
+                            <option value="12个月">12个月</option>
+                            <option value="24个月">24个月</option>
+                            <option value="36个月">36个月</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="a_profit" class="col-sm-4 control-label">年化收益：</label>
+                    <div class="col-sm-3">
+                        <input type="text" name="a_profit" id="a_profit" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="a_gvm" class="col-sm-4 control-label">成交金额：</label>
+                    <div class="col-sm-3">
+                        <input type="text" name="a_gvm" id="a_gvm" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="a_cate" class="col-sm-4 control-label">项目类别：</label>
+                    <div class="col-sm-3">
+                        <select name="a_cate" id="a_cate" class="form-control">
+                            <option value="投资项目">投资项目</option>
+                            <option value="个人理财">个人理财</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-sm-3 control-label"></label>
+                    <div class="col-sm-5">
+                        <input type="button" class="btn btn-primary btn-block" value="提交" onclick="addPro()">
+                    </div>
+                </div>
+            </form>
+        </div>
+       </div>
+</body>
+<script src="/libs/bootstrap/js/jquery.js"></script>
+<script src="/libs/bootstrap/js/bootstrap.js"></script>
+</html>
+
+

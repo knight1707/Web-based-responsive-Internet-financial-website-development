@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="author" content="knight">
+        <title>公告信息详情页</title>
+         <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/all.css">
+        <style>
+            container{
+                display: block;
+                margin: 0 auto;
+                background-color: #ddd;
+            }
+            container .left{
+                margin: 20px 15px 30px 30px;
+                width: 200px;
+                float: left;
+                text-align: center;
+                background-color: #fff;
+                border: 1px solid #e2e0e1;
+            }
+            container .left li{
+                border-bottom: 1px solid #e2e0e1;
+                height: 60px;
+                line-height: 60px;
+            }
+            container .left li a{
+                color: #333;
+            }
+             container .left li:hover,
+             container .left li:active{
+                background: #f8f6f1;                
+            }
+            container .right{
+                position: relative;
+                margin: 20px 30px 30px 5px;
+                background-color: #fff;
+                overflow: hidden;
+                min-height: 670px;
+                padding: 20px 48px;
+            }
+            container .right h1{
+                font-size: 28px;
+                color: #2584d4;
+                line-height:50px;
+                border-bottom: 1px solid #1584d4; 
+                margin-bottom: 25px;
+            }
+            container .right h1::before{
+                content: "";
+                display: inline-block;
+                width: 4px;
+                height: 22px;
+                background-color: #2584d4;
+                margin-right: 12px;
+                margin-top: -4px;
+                vertical-align: middle;
+            }
+            container .right ul{
+                list-style: none;
+                padding: 0 30px;
+            }
+            container .right ul li.notice{ 
+                cursor: pointer;
+                line-height: 30px;
+                margin-bottom: 15px;
+            }
+            container .right ul li.notice a{
+                color: #2584d4;
+                font-size: 16px;
+                /*float: left;*/
+                width: 70%;
+                /*margin-left: 2rem;*/
+                display: inline-block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            container .right ul li.notice a::before{
+                content: '【公告信息】：'
+            }
+            container .right ul li.notice span{
+               float: right;
+               font-size:14px; 
+               color: #999;
+               margin-right: 1rem;
+            }
+            container .right ul li.notice p{
+                display: block;
+                margin: 2px;
+                font-size: 14px;
+                color: #666;
+                text-indent: 2em;
+                line-height: 26px;
+                padding: 5px 0 15px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+		</style>
+  </head>
+<body>
+    <header>
+            <nav class="top">
+                <span class="tel">理财热线：666-666-6666</span>
+                <ul>
+                    <li><a href="login">登录</a></li>
+                    <li><a href="register">注册</a></li>
+                    <li><a href="backstagelogin">后台登录</a></li>
+                    <li><a href="account">我的账户</a></li>
+                    <li><a href="appdload">APP下载</a></li>
+                </ul>
+            </nav>
+            <nav class="main">
+                <a href="#" class="brand"><img src="img/logo@1x.png" alt="理财宝图标"></a>
+                <ul>
+                    <li><a href="index">首页</a></li>
+                    <li><a href="invest">理财频道</a></li>
+                    <li><a href="guide">新手指引</a></li>
+                    <li><a href="safe">安全保障</a></li>
+                    <li><a href="forus">关于我们</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!--主题内容-->
+        <container class="clearfix">
+            <!--竖直导航-->
+            <div class="left">
+                <ul>
+                    <li><a href="forus">公司介绍</a></li>
+                    <li><a href="team">管理团队</a></li>
+                    <li><a href="partner">合作伙伴</a></li>
+                    <li><a href="notice">网站公告</a></li>
+                    <li><a href="develop">一路相伴</a></li>
+                    <li><a href="contact">联系我们</a></li>
+                    <li><a href="join">加入我们</a></li>
+                </ul>
+            </div>
+            <!--内容显示-->
+            <div class="right">
+                <h1>网站公告</h1>
+                <ul class="clearfix">
+                    <%for(var i in Nots){ if(!Nots[i].name)continue;%>
+                    <li class="notice">
+                        <a class="n_title"><%=Nots[i].n_title%></a>
+                        <span class="n_time"><%=Nots[i].createTime%></span>
+                        <p class="desc"><%=Nots[i].description%></p>
+                    </li>
+                     <%}%>
+                </ul>
+              </div>
+        </container>
+       <!--底部导航-->
+       <nav class="footer clearfix">
+            <div class="footer-content">
+                <p class="brand"></p>
+                <ul>
+                    <li class="title">关于我们</li>
+                    <li><a href="forus">公司介绍</a></li>
+                    <li><a href="forus">管理团队</a></li>
+                    <li><a href="forus">加入我们</a></li>
+                    <li><a href="forus">联系我们</a></li>
+                </ul>
+                    <ul>
+                    <li class="title">新手指引</li>
+                    <li><a href="guide">平台介绍</a></li>
+                    <li><a href="guide">我的优势</a></li>
+                </ul>
+                    <ul>
+                    <li class="title">理财产品</li>
+                    <li><a href="invest">个人理财</a></li>
+                    <li><a href="invest">投资情况</a></li>
+                </ul>
+                    <ul>
+                    <li class="title">安全保障</li>
+                    <li><a href="safe">八道风控工序</a></li>
+                    <li><a href="safe">五重安全保障</a></li>
+                </ul>
+                    <ul>
+                    <li class="title">APP下载</li>
+                    <li><a href="appdload">IOS下载</a></li>
+                    <li><a href="appdload">Android下载</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!--页脚-->
+        <footer>
+           <ul>
+                <li><span class="icon icon-zfywxk">支付业务许可证</span></li>
+                <li><span class="icon icon-pcirk">PCI认证</span></li>
+                <li><span class="icon icon-visayz">Visa 验证</span></li>
+                <li><span class="icon icon-vsjmfw">VerSign加密服务</span></li>
+                <li><span class="icon icon-wlgs">网络工商</span></li>
+                <li><span class="icon icon-rzcx">电子商务协会认证诚信网</span></li>
+                <li><span class="icon icon-gs">北京工商</span></li>
+            </ul>
+            <p>Knight互联网金融公司 © 版权所有 2016-2017</p>
+            <p>客服电话： 666-6666-666 （工作时间：9：00～22：00）</p>
+        </footer>
+</body>
+</html>
+
+

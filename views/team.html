@@ -1,0 +1,224 @@
+<!--主页 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="knight">
+        <title>管理团队</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/all.css">
+        <style>
+            container{
+                display: block;
+                margin: 0 auto;
+                background-color: #ddd;
+            }
+            container .left{
+                margin: 20px 15px 30px 30px;
+                width: 200px;
+                float: left;
+                text-align: center;
+                background-color: #fff;
+                border: 1px solid #e2e0e1;
+            }
+            container .left li{
+                border-bottom: 1px solid #e2e0e1;
+                height: 60px;
+                line-height: 60px;
+            }
+            container .left li a{
+                color: #333;
+            }
+             container .left li:hover,
+             container .left li:active{
+                background: #f8f6f1;                
+            }
+            container .right{
+                position: relative;
+                margin: 20px 30px 30px 5px;
+                background-color: #fff;
+                overflow: hidden;
+                min-height: 670px;
+                padding: 20px 48px;
+            }
+            container .right h1{
+                font-size: 28px;
+                color: #2584d4;
+                line-height:50px;
+                border-bottom: 1px solid #1584d4; 
+                margin-bottom: 25px;
+            }
+            container .right .our{
+                width: 100%;
+                margin: 0 auto;
+            }
+            container .right h1::before{
+                content: "";
+                display: inline-block;
+                width: 4px;
+                height: 22px;
+                background-color: #2584d4;
+                margin-right: 12px;
+                margin-top: -4px;
+                vertical-align: middle;
+            }
+            container .right .team li img{
+                float: left;
+                width: 150px;
+                margin-left: 36px;
+            }
+            container .right .team li h4{
+                margin-left: 230px;
+                font-size: 18px;
+                font-weight: 700;
+                color: #444;
+            }
+            container .right .team li h4 em{
+                font-size: 17px;
+                color: #666;
+                font-style: normal;
+            }
+            container .right .team li p{
+                font-size: 15px;
+                margin-left: 230px;
+            }
+            container .right hr{
+                border: 1px solid #dedede;
+            }
+        </style>
+    </head>
+    <body>
+        <!--顶部-->
+        <header>
+            <nav class="top">
+                <span class="tel">理财热线：666-666-6666</span>
+                <ul>
+                    <li><a href="login">登录</a></li>
+                    <li><a href="register">注册</a></li>
+                    <li><a href="backstagelogin">后台登录</a></li>
+                    <li><a href="account">我的账户</a></li>
+                    <li><a href="appdload">APP下载</a></li>
+                </ul>
+            </nav>
+            <nav class="main">
+                <a href="#" class="brand"><img src="img/logo@1x.png" alt="理财宝图标"></a>
+                <ul>
+                    <li><a href="index">首页</a></li>
+                    <li><a href="invest">理财频道</a></li>
+                    <li><a href="guide">新手指引</a></li>
+                    <li><a href="safe">安全保障</a></li>
+                    <li><a href="forus">关于我们</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!--主题内容-->
+        <container class="clearfix">
+            <!--竖直导航-->
+            <div class="left">
+                <ul>
+                    <li><a href="forus">公司介绍</a></li>
+                    <li><a href="team">管理团队</a></li>
+                    <li><a href="partner">合作伙伴</a></li>
+                    <li><a href="notice">网站公告</a></li>
+                    <li><a href="develop">一路相伴</a></li>
+                    <li><a href="contact">联系我们</a></li>
+                    <li><a href="join">加入我们</a></li>
+                </ul>
+            </div>
+            <!--内容显示-->
+            <div class="right">
+                <h1>管理团队</h1>
+                <img src="img/forus/team.jpg" class="our">
+                <ul class="team">
+                    <li>
+                        <img src="img/forus/CEO.jpg" alt="">
+                        <h4>Knight <em>CE0</em></h4>
+                        <p>
+                        Knight 空中网（NASDAQ:KZ）副总裁;<br>
+                        TOM在线（香港上市公司）副总经理;<br>
+                        Knihgt科技控股有限公司（香港上市公司）执行董事、首席执行官;<br>
+                        具备丰富的互联网与金融行业经验，专业的上市公司管理运营经验;<br>
+                        2015年任理财宝首席执行官，全面负责海投汇日常运营工作;<br>
+                        上海同济大学学士，香港大学金融与投资管理硕士。<br>
+                        </p>
+                    </li>
+                </ul>
+                <hr>
+                <ul class="team">
+                    <li>
+                        <img src="img/forus/COO.jpg" alt="">
+                        <h4>King <em>COO</em></h4>
+                        <p>
+                        2007 年进入无线互联网领域，供职于美国风险投资机构DCM投资的创业公司，于业内最先打造出拥有数千万级用户的手机社区产品;<br>
+                        长达科技集团（HK:08026）历任新业务部总经理、副总裁;<br>
+                        上市公司空中网（NASDAQ :KZ）历任技术部、无线互联网事业部高级经理;<br>
+                        2015 年任理财宝COO;<br>
+                        北京理工大学计算机应用硕士。<br><br>
+                        </p>
+                    </li>
+                </ul>
+                <hr>
+                <ul class="team">
+                    <li>
+                        <img src="img/forus/研发总监.jpg" alt="">
+                        <h4>Queen <em>CTO</em></h4>
+                        <p>
+                        澳大利亚联邦大学商学院学士、英国利兹贝克特大学商学院金融学硕士，先后就职于澳大利亚圣乔治银行和英国汇丰银行。<br>
+                        对金融风险管理领域的数量分析、市场风险、信用风险有深厚的理论研究和实践经验。<br>
+                        2015年回国，进入互联网金融行业并结合国内再生资源行业提出"以再生资源产业为基础的供应链金融"服务。<br>
+                        2016 年任理财宝研发总监;<br>
+                        通过金融服务为中再生协会旗下会员提供融资解决方案，实现再生资源产业升级转型
+                        </p>
+                    </li>
+                </ul>        
+            </div>
+        </container>
+       <!--底部导航-->
+       <nav class="footer clearfix">
+            <div class="footer-content">
+                <p class="brand"></p>
+                <ul>
+                    <li class="title">关于我们</li>
+                    <li><a href="forus">公司介绍</a></li>
+                    <li><a href="team">管理团队</a></li>
+                    <li><a href="join">加入我们</a></li>
+                    <li><a href="contact">联系我们</a></li>
+                </ul>
+                    <ul>
+                    <li class="title">新手指引</li>
+                    <li><a href="guide">平台介绍</a></li>
+                    <li><a href="guide">我的优势</a></li>
+                </ul>
+                    <ul>
+                    <li class="title">理财产品</li>
+                    <li><a href="invest">个人理财</a></li>
+                    <li><a href="invest">投资情况</a></li>
+                </ul>
+                    <ul>
+                    <li class="title">安全保障</li>
+                    <li><a href="safe">八道风控工序</a></li>
+                    <li><a href="safe">五重安全保障</a></li>
+                </ul>
+                    <ul>
+                    <li class="title">APP下载</li>
+                    <li><a href="appdload">IOS下载</a></li>
+                    <li><a href="appdload">Android下载</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!--页脚-->
+        <footer>
+           <ul>
+                <li><span class="icon icon-zfywxk">支付业务许可证</span></li>
+                <li><span class="icon icon-pcirk">PCI认证</span></li>
+                <li><span class="icon icon-visayz">Visa 验证</span></li>
+                <li><span class="icon icon-vsjmfw">VerSign加密服务</span></li>
+                <li><span class="icon icon-wlgs">网络工商</span></li>
+                <li><span class="icon icon-rzcx">电子商务协会认证诚信网</span></li>
+                <li><span class="icon icon-gs">北京工商</span></li>
+            </ul>
+            <p>Knight互联网金融公司 © 版权所有 2016-2017</p>
+            <p>客服电话： 666-6666-666 （工作时间：9：00～22：00）</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="author" content="knight">
+        <title>理财频道</title>
+        <link href="/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+        <style>
+			.panel-title{
+				font-size: 24px;
+				font-weight: bold;
+			}
+            ul.title li{
+                border-bottom: 1px solid silver;
+            }
+            ul.title{
+                font-size: 24px;
+            }
+            ul.title>li span{
+                text-align: center;
+                margin-right:110px; 
+            }
+            ul.content li{
+                margin-top: 10px;
+            }
+            ul.content li div a{
+                display: inline-block;
+                text-align: center;
+                font-size: 20px;
+                width: 16.2%;
+            }
+		</style>
+        <script>
+            function del(){
+                if(confirm("是否确定退出登录?")){
+                    self.location="logout";
+                }else{
+                    self.location="invest";
+                }
+            }
+            function invest(){
+                if(confirm("投标成功，是否进入个人详情页查看?")){
+                    self.location="account";
+                }else{
+                    self.location="invest";
+                }
+            }
+        </script>
+  </head>
+<body>
+    <header>
+            <nav class="top">
+                <span class="tel">理财热线：666-666-6666</span>
+                <ul>
+                    <li><a href="login">登录</a></li>
+                    <li><a href="register">注册</a></li>
+                    <li><a href="backstagelogin">后台登录</a></li>
+                    <li><a href="account">我的账户</a></li>
+                    <li><a href="appdload">APP下载</a></li>
+                </ul>
+            </nav>
+            <nav class="main">
+                <a href="#" class="brand"><img src="img/logo@1x.png" alt="理财宝图标"></a>
+                <ul>
+                    <li><a href="index">首页</a></li>
+                    <li><a href="invest">理财频道</a></li>
+                    <li><a href="guide">新手指引</a></li>
+                    <li><a href="safe">安全保障</a></li>
+                    <li><a href="forus">关于我们</a></li>
+                </ul>
+            </nav>
+        </header>
+        <container>
+            <div style="margin:0px auto;width: 95%;">
+                <div class="panel panel-default" >
+                    <div class="panel-heading" style="height: 40px;">
+                                <div style="text-align: left">
+                                    <span style="font-size:20px; font-weight:bold;">项目展示页</span>
+                                    <div style="float: right;">
+                                        <a class="btn  btn-xs btn-success" href="account" style="margin-right: 35px;">个人账户</a>
+                                       <a class="btn btn-xs btn-info" onclick="del()">退 出 登 录</a>
+                                        <!--<a class="btn btn-xs btn-info" href="logout">退 出 登 录</a>-->
+                                    </div>
+                                </div>
+                            </div>
+                    <div class="panel-body">
+                        <ul class="title">
+                            <li>
+                                <span style="margin-left:25px;">项目名称</span>
+                                <span style="">项目期限</span>
+                                <span style="">年化收益</span>
+                                <span style="">成交金额</span>
+                                <span style="">项目类型</span>
+                                <span style="">操作</span>
+                            </li>
+                        </ul>
+                        <ul class="content">
+                            <%for(var i in Pros){ if(!Pros[i].name)continue;%>
+                                <li>
+                                    <div>
+                                        <a style=""><%=Pros[i].name%></a>
+                                        <a style=""><%=Pros[i].period%></a>
+                                        <a style=""><%=Pros[i].profit%></a>
+                                        <a style=""><%=Pros[i].gvm%></a>
+                                        <a style="" ><%=Pros[i].cate%></a>
+                                        <a class="btn btn-warning" style="width: 100px;margin-left:40px;"  href="/addToAut/<%=Pros[i]._id%>" onclick="invest()">投标</a>
+                                    </div>
+                                </li>
+                            <%}%>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+       </container>
+       <nav class="footer clearfix">
+            <div class="footer-content">
+                <p class="brand"></p>
+                <ul>
+                    <li class="title">关于我们</li>
+                    <li><a href="forus">公司介绍</a></li>
+                    <li><a href="team">管理团队</a></li>
+                    <li><a href="join">加入我们</a></li>
+                    <li><a href="contact">联系我们</a></li>
+                </ul>
+                    <ul>
+                    <li class="title">新手指引</li>
+                    <li><a href="guide">平台介绍</a></li>
+                    <li><a href="guide">我的优势</a></li>
+                </ul>
+                    <ul>
+                    <li class="title">理财产品</li>
+                    <li><a href="invest">个人理财</a></li>
+                    <li><a href="invest">投资情况</a></li>
+                </ul>
+                    <ul>
+                    <li class="title">安全保障</li>
+                    <li><a href="safe">八道风控工序</a></li>
+                    <li><a href="safe">五重安全保障</a></li>
+                </ul>
+                    <ul>
+                    <li class="title">APP下载</li>
+                    <li><a href="appdload">IOS下载</a></li>
+                    <li><a href="appdload">Android下载</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!--页脚-->
+        <footer>
+           <ul>
+                <li><span class="icon icon-zfywxk">支付业务许可证</span></li>
+                <li><span class="icon icon-pcirk">PCI认证</span></li>
+                <li><span class="icon icon-visayz">Visa 验证</span></li>
+                <li><span class="icon icon-vsjmfw">VerSign加密服务</span></li>
+                <li><span class="icon icon-wlgs">网络工商</span></li>
+                <li><span class="icon icon-rzcx">电子商务协会认证诚信网</span></li>
+                <li><span class="icon icon-gs">北京工商</span></li>
+            </ul>
+            <p>Knight互联网金融公司 © 版权所有 2016-2017</p>
+            <p>客服电话： 666-6666-666 （工作时间：9：00～22：00）</p>
+        </footer>
+        <script src="/libs/picturefill.js"></script>
+        <script src="/libs/bootstrap/js/jquery.js"></script>
+        <script src="/libs/bootstrap/js/bootstrap.js"></script>
+    </body>
+    <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/all.css">
+</body>
+</html>
+
+

@@ -1,0 +1,172 @@
+<!--主页 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="knight">
+        <title>公司介绍</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/all.css">
+        <style>
+            container{
+                display: block;
+                margin: 0 auto;
+                background-color: #ddd;
+            }
+            container .left{
+                margin: 20px 15px 30px 30px;
+                width: 200px;
+                float: left;
+                text-align: center;
+                background-color: #fff;
+                border: 1px solid #e2e0e1;
+            }
+            container .left li{
+                border-bottom: 1px solid #e2e0e1;
+                height: 60px;
+                line-height: 60px;
+            }
+            container .left li a{
+                color: #333;
+            }
+             container .left li:hover,
+             container .left li:active{
+                background: #f8f6f1;                
+            }
+            container .right{
+                position: relative;
+                margin: 20px 30px 30px 5px;
+                background-color: #fff;
+                overflow: hidden;
+                min-height: 670px;
+                padding: 20px 48px;
+            }
+            container .right h1{
+                font-size: 28px;
+                color: #2584d4;
+                line-height:50px;
+                border-bottom: 1px solid #1584d4; 
+                margin-bottom: 25px;
+            }
+            container .right h1::before{
+                content: "";
+                display: inline-block;
+                width: 4px;
+                height: 22px;
+                background-color: #2584d4;
+                margin-right: 12px;
+                margin-top: -4px;
+                vertical-align: middle;
+            }
+            container .right p{
+                font-size: 16px;
+                line-height: 30px;
+                padding: 0 45px;
+                text-indent: 2em;
+            }
+            container .right img{
+                width: 95%;
+                display: block;
+                margin: 10px auto;
+            }
+        </style>
+    </head>
+    <body>
+        <!--顶部-->
+        <header>
+            <nav class="top">
+                <span class="tel">理财热线：666-666-6666</span>
+                <ul>
+                    <li><a href="login">登录</a></li>
+                    <li><a href="register">注册</a></li>
+                    <li><a href="backstagelogin">后台登录</a></li>
+                    <li><a href="account">我的账户</a></li>
+                    <li><a href="appdload">APP下载</a></li>
+                </ul>
+            </nav>
+            <nav class="main">
+                <a href="#" class="brand"><img src="../img/logo@1x.png" alt="理财宝图标"></a>
+                <ul>
+                    <li><a href="index">首页</a></li>
+                    <li><a href="invest">理财频道</a></li>
+                    <li><a href="guide">新手指引</a></li>
+                    <li><a href="safe">安全保障</a></li>
+                    <li><a href="forus">关于我们</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!--主题内容-->
+        <container class="clearfix">
+            <!--竖直导航-->
+            <div class="left">
+                <ul>
+                    <li><a href="forus">公司介绍</a></li>
+                    <li><a href="team">管理团队</a></li>
+                    <li><a href="partner">合作伙伴</a></li>
+                    <li><a href="notice">网站公告</a></li>
+                    <li><a href="develop">一路相伴</a></li>
+                    <li><a href="contact">联系我们</a></li>
+                    <li><a href="join">加入我们</a></li>
+                </ul>
+            </div>
+            <!--内容显示-->
+            <div class="right">
+                <h1>理财宝介绍</h1>
+                <img src="img/forus/money.jpg" alt="">
+                <p>理财宝创办于2016年4月，平台由Knight互联网公司运营。注册资本6666万元人民币，实缴资本6000万元人民币，总部位于北京，拥有完整的产品、研发、风控、财务、市场以及客服等职能体系，是一家具备优秀的自主研发能力的金融创新型企业。</p>
+                <p>2017年1月，理财宝完成Pre-A轮战略融资，引入了国内知名私募股权基金五星资本（共青城五疆星耀投资管理合伙企业（有限合伙）），并开启与美国纳斯达克上市公司空中网（NASDAQ：KZ）的深度战略合作。</p>
+                <p>理财宝的核心团队来自于国内的金融投资及互联网企业，凭借丰富的投资管理和金融风控经验以及互联网信息管理技术，为投资者提供透明、灵活、便捷的金融产品和金融服务，帮助其实现资产的稳健增值，同时，通过为融资方高效解决资金需求，帮助其改善生产和生活。</p>
+                <p>作为互联网金融行业的新生代，理财宝已在资产端、 资金端和客户端形成完善的业务闭环和风控体系，凭借对产业的深入了解和丰富的投资经验，严谨的风控措施，理财宝通过专业的在线金融产品设计、严苛的风控管理体系以及权威的大数据分析，为借款方和投资方提供优质的金融居间服务。</p>
+                <h1>组织架构</h1>
+                <img src="img/forus/structure.jpg" alt="组织架构">
+            </div>
+        </container>
+       <!--底部导航-->
+       <nav class="footer clearfix">
+            <div class="footer-content">
+                <p class="brand"></p>
+                <ul>
+                    <li class="title">关于我们</li>
+                    <li><a href="forus">公司介绍</a></li>
+                    <li><a href="team">管理团队</a></li>
+                    <li><a href="join">加入我们</a></li>
+                    <li><a href="contact">联系我们</a></li>
+                </ul>
+                <ul>
+                    <li class="title">新手指引</li>
+                    <li><a href="guide">平台介绍</a></li>
+                    <li><a href="guide">我的优势</a></li>
+                </ul>
+                 <ul>
+                    <li class="title">理财产品</li>
+                    <li><a href="invest">个人理财</a></li>
+                    <li><a href="invest">投资情况</a></li>
+                </ul>
+                 <ul>
+                    <li class="title">安全保障</li>
+                    <li><a href="safe">八道风控工序</a></li>
+                    <li><a href="safe">五重安全保障</a></li>
+                </ul>
+                    <ul>
+                    <li class="title">APP下载</li>
+                    <li><a href="appdload">IOS下载</a></li>
+                    <li><a href="appdload">Android下载</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!--页脚-->
+        <footer>
+           <ul>
+                <li><span class="icon icon-zfywxk">支付业务许可证</span></li>
+                <li><span class="icon icon-pcirk">PCI认证</span></li>
+                <li><span class="icon icon-visayz">Visa 验证</span></li>
+                <li><span class="icon icon-vsjmfw">VerSign加密服务</span></li>
+                <li><span class="icon icon-wlgs">网络工商</span></li>
+                <li><span class="icon icon-rzcx">电子商务协会认证诚信网</span></li>
+                <li><span class="icon icon-gs">北京工商</span></li>
+            </ul>
+            <p>Knight互联网金融公司 © 版权所有 2016-2017</p>
+            <p>客服电话： 666-6666-666 （工作时间：9：00～22：00）</p>
+        </footer>
+    </body>
+</html>

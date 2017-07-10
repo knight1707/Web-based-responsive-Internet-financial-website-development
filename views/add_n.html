@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="knight">
+    <title>项目添加</title>
+    <link href="/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style>
+        body{
+            padding-top: 50px;
+        }
+        nav div div span a{
+            color: white;
+            font-size: 16px;
+        }
+        .form-horizontal{
+            margin-top: 15px;
+        }
+        form-horizontal .control-label{
+            text-align: left;
+        }
+    </style>
+	<script type="text/javascript">
+        function addNot(){
+            var name = $('#name').val(), n_title = $('#n_title').val();
+            var createTime = $('#createTime').val(), description = $('#description').val();
+            var data = { "name": name, n_title:n_title,"createTime": createTime,description: description};
+            $.ajax({
+                url:'/add_n',
+                type:'POST',
+                data:data,
+                success:function(data,status){
+                    if(status == 'success'){
+                        alert('添加成功！')
+                        location.href='detail_n';
+                    }
+                },
+                error:function(data,err){
+                    alert('添加失败！')
+                }
+            });
+        }
+        function goback(){
+                history.go(-1);
+        }
+        function loginout(){
+            if(confirm("请确认是否退出系统?")){
+                self.location="../backstagelogin";
+            }else{
+                self.location="#";
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container dropdown">
+                <a href="#" class="navbar-brand">产品信息添加</a>
+                <div class="navbar-text pull-right text-right">
+                    <span>
+                        <span class="glyphicon glyphicon-leaf"></span>
+                        <a href="../index">返回首页</a>
+                    </span>&#x3000;
+                    <span>
+                        <span class="glyphicon glyphicon-piggy-bank"></span>
+                        <a href="../invest">投资频道</a>
+                    </span>&#x3000;
+                    <span>
+                        <span class="glyphicon glyphicon-arrow-left"></span>
+                        <a onclick="goback()" href="#">返回上一级</a>
+                    </span>&#x3000;
+                    <span>
+                        <span class="glyphicon glyphicon-log-out" ></span>
+                        <a href="#" onclick="loginout()">退出登录</a>
+                    </span>
+                </div>
+            </div>
+        </nav>
+        <div class="header navbar navbar-default">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="add_n">添加公告信息</a></li>
+                <li><a href="add_e">添加项目信息</a></li>
+            </ul>
+        </div>
+        <div class="container">
+        <div style="margin:10px auto;width: 900px;" class="add_c">
+            <h1 style="margin-left: 220px; margin-bottom: 30px;">添加公告</h1>
+            <!--<a class="btn  btn-xs btn-success" href="notice" style="margin-right: 200px;">查看前台公告信息</a>-->
+            <form action="#" role="form" class="form-horizontal" method="POST">
+                <div class="form-group">
+                    <label for="name" class="col-sm-4 control-label">发布人：</label>
+                    <div class="col-sm-3">
+                        <input type="text" name="name" id="name" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="n_title" class="col-sm-4 control-label">公告主题：</label>
+                    <div class="col-sm-6">
+                        <input type="text" name="n_title" id="n_title" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="createTime" class="col-sm-4 control-label">创建时间：</label>
+                    <div class="col-sm-3">
+                        <input type="text" name="createTime" id="createTime" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description" class="col-sm-4 control-label">具体事件：</label>
+                    <div class="col-sm-6">
+                         <textarea id="description" name="description" class="form-control" rows="10" placeholder="请详细描述你的问题"></textarea>
+                        <!--<input type="text" name="description" id="description" class="form-control">-->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-sm-3 control-label"></label>
+                    <div class="col-sm-8">
+                        <input type="button" class="btn btn-primary btn-block" value="提交" onclick="addNot()">
+                    </div>
+                </div>
+            </form>
+        </div>
+       </div>
+</body>
+<script src="/libs/bootstrap/js/jquery.js"></script>
+<script src="/libs/bootstrap/js/bootstrap.js"></script>
+</html>
+
+

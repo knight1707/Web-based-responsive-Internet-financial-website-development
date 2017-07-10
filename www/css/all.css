@@ -1,0 +1,311 @@
+/*************页面样式**************/
+
+/* ==========基本默认值=============*/
+html{
+    font-size: 62.5%;
+    color: #222;
+}
+::selection{
+    background-color: #b3d4fc;
+    text-shadow: none;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+
+/*=======工具样式=========*/
+.center-block{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+.pull-right{
+    float: right !important;
+}
+.pull-left{
+    float: left !important;
+}
+.text-right{
+    text-align: right !important;
+}
+.text-left{
+    text-align: left !important;
+}
+.text-center{
+    text-align: center !important;
+}
+.hide{
+    display: none !important;
+}
+.show{
+    display: block !important;
+}
+.invisible{
+    visibility: hidden;
+}
+.text-hide{
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+.clearfix::before,
+.clearfix::after{
+    content: "";
+    display: table;
+}
+.clearfix::after{
+    clear: both;
+}
+
+/*==========页面基本样式==========*/
+body{
+    font-size: 1.2rem;
+    line-height: 1.5;
+    background-color: #f7f7f7;
+}
+a{
+    color: #aaa;
+    text-decoration: none;
+}
+a:hover,a:active{
+    color: #0ae;
+    text-decoration: underline;
+}
+
+/*页面头部*/
+header{
+    width: 100%;
+}
+header .top{
+    line-height: 3rem;
+    padding: 0 1.5rem;
+    color: #fff;
+    background: #555;
+    border-bottom: 1px solid #ecc000;
+}
+header .top .tel{
+    float: left;
+}
+header .top ul{
+    text-align: right;
+}
+header .top ul li{
+    display: inline-block;
+}
+/*li+li :从第一个元素之后的每个元素*/
+header .top ul li + li{
+    border-left: 1px solid #999;
+    margin-left: -3px;
+}
+header .top ul li a{
+    display: inline-block;
+    padding: 0 1.5rem;
+    color: #fff;
+}
+
+@media only screen and (max-width: 50rem){
+    header .top ul li a{
+        padding: 0 1rem;
+    }
+}
+@media only screen and (max-width: 30rem){
+    header .top .tel,
+    header .top ul li:nth-child(3),
+    header .top ul li:nth-child(4){
+        display: none;
+    }
+}
+
+header .main{
+    padding: 0;
+}
+header .main .brand{
+    float: left;
+    padding: 1rem 1.5rem 0;
+}
+header .main ul{
+    text-align: right;
+}
+header .main ul li{
+    display: inline-block;
+    border-left: 1px solid #f0ede9;
+}
+header .main ul li a{
+    display: inline-block;
+    padding: 0 2.4rem;
+    line-height: 5.5rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #7c7a65;
+    text-decoration: none;
+}
+header .main ul li a:hover,
+header .main ul li a:active{
+    color: #ffb300;
+    background-color: #f8f6f1;
+}
+
+@media only screen and (max-width: 50rem){
+header .main .brand{
+    float: none;
+    display: block;
+    padding: 0;
+    margin: 1.5rem auto 0.5rem;
+    text-align: center;
+}
+header .main ul{
+    text-align: center;
+}
+header .main ul li{
+    border: none;
+}
+header .main ul li a{
+    padding: 0 1.5rem; 
+}
+}
+@media only screen and (max-width: 30rem){
+    header .main ul li{
+        line-height: 3rem;
+    }
+    header .main ul li:first-child{
+        display: none;
+    }
+    header .main ul li a{
+        font-weight: normal;
+        padding: 0 0.5rem;
+    }
+}
+
+/*内容*/
+container{
+    width: 100%; 
+}
+
+/*底部导航*/
+.footer{
+    padding: 3rem 0;
+    background-color: #fff;
+    border-top: 2px solid #eee;
+}
+.footer-content{
+    width: 90%;
+    margin: 0 auto;
+}
+.footer-content .brand{
+    float: left;
+    display: block;
+    /*滤镜*/
+    filter: grayscale(100%);
+    width: 20%;
+    height: 35px;
+    background: url('../img/logo@1x.png') no-repeat;
+    background-size: 150px 35px;
+}
+.footer-content ul{
+    float: left;
+    width: 15%;
+}
+.footer-content ul li{
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+}
+.footer-content ul li.title{
+    font-size: 1.6rem;
+    line-height: 3rem;
+}
+
+@media only screen and (max-width: 50rem){
+    .footer-content .brand{
+        display: none;
+    }
+    .footer-content ul{
+        width: 20%;
+    }
+    .footer-content ul li{
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+    .footer-content ul li.title{
+        font-size: 1.4rem;
+        line-height: 2.5rem;
+    }
+}
+@media only screen and (max-width: 30rem){
+    .footer-content{
+        width: 98%;
+    }
+    .footer-content ul li.title{
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+}
+
+/*页脚*/
+footer{
+    width: 100%;
+    padding: 3rem 0.5rem;
+    background-color: #ededed;
+}
+footer ul{
+    text-align: center;
+}
+footer ul li{
+    display: inline-block;
+}
+footer ul li .icon{
+    display: inline-block;
+    text-indent: -999rem;
+    margin-right: 1.5rem;
+    background: url(https://i.alipayobjects.com/e/201307/jebmKcbrh.png) no-repeat;
+    background-size: 466px 447px;
+    overflow: hidden;
+}
+footer ul li .icon-zfywxk{
+    width: 38px;
+    height: 27px;
+    background-position: -369px -45px;
+}
+footer ul li .icon-pcirk{
+    width: 78px;
+    height: 27px;
+    background-position: -110px -96px;
+}
+footer ul li .icon-visayz{
+    width: 36px;
+    height: 27px;
+    background-position: -426px -90px;
+}
+footer ul li .icon-vsjmfw{
+    width: 63px;
+    height: 27px;
+    margin-right: 13px;
+    background-position:-401px -186px; 
+}
+footer ul li .icon-wlgs{
+    width: 22px;
+    height: 27px;
+    background-position: -48px -48px;
+}
+footer ul li .icon-rzcx{
+    width: 75px;
+    height: 27px;
+    background-position: 0 -320px;
+}
+footer ul li .icon-gs{
+    width: 30px;
+    height: 30px;
+    margin-right: 0;
+    background: url(https://os.alipayobjects.com/rmsportal/lybcjqloSPjMAFg.png) no-repeat;
+    background-size: 30px;
+}
+footer p{
+    text-align: center;
+    color: #999;
+}
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="author" content="knight">
+        <title>管理员登录</title>
+        <link href="/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+        <style>
+            span a{
+                color: white;
+                font-size: 16px;
+            }
+            .panel-body{
+				padding: 30px 50px 0 50px;
+
+			}
+			.form-group{
+				margin-bottom: 35px;
+			}
+			.panel-title{
+				font-size: 24px;
+				font-weight: bold;
+			}
+        </style>
+        <script>      
+            function checkadmin(){
+                var adminname = document.getElementById("adminname").value; 
+                var adminpass = document.getElementById("adminpass").value;
+                if((adminname == "admin") && (adminpass == "123456")){
+                   location.href='detail_e';
+                }else{
+                    alert("管理员用户名、密码不匹配，请重新输入");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <!--导航-->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container dropdown">
+                <a href="#" class="navbar-brand">后台管理员登录</a>
+                <div class="navbar-text pull-right text-right">
+                    <span>
+                        <span class="glyphicon glyphicon-leaf"></span>
+                        <a href="index">返回首页</a>
+                    </span>&#x3000;
+                    <span>
+                        <span class="glyphicon glyphicon-piggy-bank"></span>
+                        <a href="invest">投资频道</a>
+                    </span>
+                </div>
+            </div>
+        </nav>
+        <div class="container" style="margin-top:100px;width: 900px;">
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" style="height: 50px;">
+                            <div class="panel-title" style="text-align: left">用户登录</div>
+                        </div>
+                        <div class="panel-body">
+                            <form action="detail-e.html" class="form-horizontal" role="form" method="post" >
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="adminname" id="adminname" placeholder="请输入后台用户名" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" name="adminpass" id="adminpass" autocomplete="off" placeholder="请输入后台密码" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="button" class="btn btn-success btn-block" onclick="return checkadmin()" value="登 录" />
+                                </div>
+                            </form>      
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/libs/bootstrap/js/jquery.js"></script>
+        <script src="/libs/bootstrap/js/bootstrap.js"></script>
+    </body>
+</html>

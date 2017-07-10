@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="author" content="knight">
+        <title>用户登录</title>
+        <link href="/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style>
+        .bg{
+            background-image: url(img/login/login-bg.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+        }
+        .panel-body{
+            padding: 30px 50px 0 50px;
+        }
+        .form-group{
+            margin-bottom: 35px;
+        }
+        .panel-title{
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+    <script type="text/javascript">
+        function register(){
+            var name = $('#username').val(),
+                    password = $('#password').val(),
+                    tel = $('#tel').val();
+            var data = { "uname": name, upwd:password,"utel":tel};
+            $.ajax({
+                url:'/register',
+                type:'POST',
+                data:data,
+                success:function(data,status){
+                    if(status == 'success'){
+                        location.href='login';
+                    }
+                },
+                error:function(data,err){
+                    location.href='register';
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+            <nav class="top">
+                <span class="tel">理财热线：666-666-6666</span>
+                <ul>
+                    <li><a href="login">登录</a></li>
+                    <li><a href="register">注册</a></li>
+                    <li><a href="backstagelogin">后台登录</a></li>
+                    <li><a href="account">我的账户</a></li>
+                    <li><a href="appdload">APP下载</a></li>
+                </ul>
+            </nav>
+            <nav class="main">
+                <a href="#" class="brand"><img src="img/logo@1x.png" alt="理财宝图标"></a>
+                <ul>
+                    <li><a href="index">首页</a></li>
+                    <li><a href="invest">理财频道</a></li>
+                    <li><a href="guide">新手指引</a></li>
+                    <li><a href="safe">安全保障</a></li>
+                    <li><a href="forus">关于我们</a></li>
+                </ul>
+            </nav>
+        </header>
+        <container>
+         <div class="bg">
+        <div class="container web-body" style="margin-top:0;width: 980px;">
+            <%- message %>
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" style="height: 50px;">
+                            <div class="panel-title" style="text-align: left">用户注册</div>
+                        </div>
+                        <div class="panel-body">
+                            <form action="#" class="form-horizontal" role="form" method="post" >
+                                <div class="form-group">
+                                    <input id="username" type="text" class="form-control" name="username" placeholder="用户名" />
+                                </div>
+                                <div class="form-group">
+                                    <input id="password" type="password" class="form-control" name="password"  placeholder="密码" />
+                                </div>
+                                <div class="form-group">
+                                    <input id="confirmpwd" type="password" class="form-control" name="confirmpwd" placeholder="确认密码" />
+                                </div>
+                                <div class="form-group">
+                                    <input id="tel" type="tel" class="form-control" name="tel" placeholder="请输入电话号码" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="button" class="btn btn-success btn-block" onclick="register()" value="注 册" />
+                                    <a href="login" class="btn btn-primary" style="float: right;margin-top: 20px;">登 录</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </container>
+       <nav class="footer clearfix">
+            <div class="footer-content">
+                <p class="brand"></p>
+                <ul>
+                    <li class="title">关于我们</li>
+                    <li><a href="forus">公司介绍</a></li>
+                    <li><a href="team">管理团队</a></li>
+                    <li><a href="join">加入我们</a></li>
+                    <li><a href="contact">联系我们</a></li>
+                </ul>
+                    <ul>
+                    <li class="title">新手指引</li>
+                    <li><a href="guide">平台介绍</a></li>
+                    <li><a href="guide">我的优势</a></li>
+                </ul>
+                    <ul>
+                    <li class="title">理财产品</li>
+                    <li><a href="invest">个人理财</a></li>
+                    <li><a href="invest">投资情况</a></li>
+                </ul>
+                    <ul>
+                    <li class="title">安全保障</li>
+                    <li><a href="safe">八道风控工序</a></li>
+                    <li><a href="safe">五重安全保障</a></li>
+                </ul>
+                    <ul>
+                    <li class="title">APP下载</li>
+                    <li><a href="appdload">IOS下载</a></li>
+                    <li><a href="appdload">Android下载</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!--页脚-->
+        <footer>
+           <ul>
+                <li><span class="icon icon-zfywxk">支付业务许可证</span></li>
+                <li><span class="icon icon-pcirk">PCI认证</span></li>
+                <li><span class="icon icon-visayz">Visa 验证</span></li>
+                <li><span class="icon icon-vsjmfw">VerSign加密服务</span></li>
+                <li><span class="icon icon-wlgs">网络工商</span></li>
+                <li><span class="icon icon-rzcx">电子商务协会认证诚信网</span></li>
+                <li><span class="icon icon-gs">北京工商</span></li>
+            </ul>
+            <p>Knight互联网金融公司 © 版权所有 2016-2017</p>
+            <p>客服电话： 666-6666-666 （工作时间：9：00～22：00）</p>
+        </footer>
+        <script src="/libs/picturefill.js"></script>
+        <script src="/libs/bootstrap/js/jquery.js"></script>
+        <script src="/libs/bootstrap/js/bootstrap.js"></script>
+    </body>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/all.css">
+</body>
+</html>
+
+
